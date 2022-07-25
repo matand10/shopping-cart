@@ -1,6 +1,6 @@
-import { toyService } from '../../services/toy.service.js'
+import { toyService } from '../../services/shop.service.js'
 
-export function loadToys() {
+export function loadItems() {
     return async dispatch => {
         try {
             const toys = await toyService.query()
@@ -11,7 +11,7 @@ export function loadToys() {
     }
 }
 
-export function removeToy(toyId) {
+export function removeItem(toyId) {
     return async dispatch => {
         try {
             await toyService.remove(toyId)
@@ -22,7 +22,7 @@ export function removeToy(toyId) {
     }
 }
 
-export function saveToy(toy) {
+export function saveItem(toy) {
     return async dispatch => {
         const actionType = (toy._id) ? 'UPDATE_TOY' : 'ADD_TOY'
         try {
