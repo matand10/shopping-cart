@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useEffect } from "react"
+import { ItemList } from "../cmps/item-list"
 import { itemService } from '../services/item.service'
 
 
@@ -18,5 +19,6 @@ export const Homepage = () => {
     console.log(items);
     return <section className="homepage main-layout">
         <h1>Hello from</h1>
+        <ItemList items={items} />
     </section>
 }
