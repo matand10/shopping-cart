@@ -1,6 +1,6 @@
 
 
-export const ItemDescription = ({ item }) => {
+export const ItemDescription = ({ item, onAddToCart }) => {
 
 
     return (
@@ -8,7 +8,7 @@ export const ItemDescription = ({ item }) => {
             <h1>{item.title}</h1>
             <p>{item.description}</p>
             <p>${item.price}</p>
-            <button className="add-cart-btn">Add to cart</button>
+            <button onClick={() => onAddToCart(item)} className="add-cart-btn">Add to cart</button>
         </section>
     )
 }

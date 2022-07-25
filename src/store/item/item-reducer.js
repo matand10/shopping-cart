@@ -1,9 +1,11 @@
 const initialState = {
     items: [],
+    cart: []
 }
 
 export function itemReducer(state = initialState, action) {
     var items
+    var cart
 
     switch (action.type) {
         case 'SET_ITEMS':
@@ -14,6 +16,9 @@ export function itemReducer(state = initialState, action) {
         case 'ADD_ITEM':
             items = [action.item, ...state.items]
             return { ...state, items }
+        case 'ADD_CART':
+            cart = [action.item, ...state.cart]
+            return { ...state, cart }
         case 'UPDATE_ITEM':
             items = state.items.map(currItem =>
                 (currItem._id === action.item._id) ? action.item : currItem)
