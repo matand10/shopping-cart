@@ -5,7 +5,6 @@ import { ItemDescription } from "./item-description";
 
 
 export const ItemPreview = ({ item }) => {
-    // const { cart } = useSelector((storeState) => storeState.itemModule)
     const dispatch = useDispatch()
 
     const onAddToCart = (item) => {
