@@ -1,0 +1,23 @@
+.header {
+    background-color: $color5;
+    color: $color3;
+    min-height: 2.5rem;
+    width: 100%;
+
+    .header-wrapper {
+        width: 100%;
+        justify-content: space-between;
+
+
+    }
+}
+
+.btn-header {
+    padding: 10px;
+    border-right: 1px solid $color4;
+    height: 40px;
+
+    &:hover {
+        background-color: $color4;
+    }
+}
