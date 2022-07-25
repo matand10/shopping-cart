@@ -1,11 +1,8 @@
-
-
+import { ItemPreview } from "./item-preview"
 export const ItemList = ({ items }) => {
-
-
     return (
-        <section>
-            <h1>Hello list item</h1>
+        <section className="item-list-container">
+            {items.map(item => <ItemPreview key={item._id} item={item} />)}
         </section>
     )
 }

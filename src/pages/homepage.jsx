@@ -17,8 +17,8 @@ export const Homepage = () => {
     }
 
     console.log(items);
+    if (!items) return <div>Loading...</div>
     return <section className="homepage main-layout">
-        <h1>Hello from</h1>
         <ItemList items={items} />
     </section>
 }
