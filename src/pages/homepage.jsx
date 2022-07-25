@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useEffect } from "react"
-import { shopService } from '../services/shop.service'
+import { itemService } from '../services/item.service'
 
 
 export const Homepage = () => {
@@ -11,7 +11,7 @@ export const Homepage = () => {
     }, [])
 
     const loadItems = async () => {
-        const items = await shopService.query()
+        const items = await itemService.query()
         setItems(items)
     }
 
@@ -19,5 +19,4 @@ export const Homepage = () => {
     return <section className="homepage main-layout">
         <h1>Hello from</h1>
     </section>
-
 }

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { storageService } from './async-storage.service';
 const BASE_URL = 'https://fakestoreapi.com/products/';
 
-export const shopService = {
+export const itemService = {
     query,
     getById,
     save,
