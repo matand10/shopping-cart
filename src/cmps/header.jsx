@@ -15,7 +15,7 @@ export function Header() {
                 <div className="btn btn-header" onClick={() => navigate('/contact')}>Contact Us</div>
             </div>
             <div className="header-wrapper-right flex">
-                <div className="btn btn-header" onClick={() => navigate('/cart')}><BsFillCartFill /></div>
+                <div className="btn btn-header" onClick={() => navigate('/cart')}><BsFillCartFill /> 0 Item(s) - $0</div>
             </div>
         </div>
     </header>
