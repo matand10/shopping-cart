@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { storageService } from './async-storage.service';
+import { utilService } from './util.service';
 const BASE_URL = 'https://fakestoreapi.com/products/';
 
 export const itemService = {
@@ -15,8 +16,13 @@ async function query() {
         if (storageItems.length) return storageItems[0]
 
         const items = await axios.get('https://fakestoreapi.com/products')
-        storageService.post('item', items.data)
-        return items.data
+        const res = items.data.map(item => {
+            delete item.id
+            item._id = utilService.makeId()
+            return item
+        })
+        storageService.post('item', res)
+        return res
     } catch (err) {
         console.log(err)
     }
