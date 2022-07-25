@@ -1,17 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../store/item/item.action";
 import { ItemDescription } from "./item-description";
 
-
-
 export const ItemPreview = ({ item }) => {
-    // const { cart } = useSelector((storeState) => storeState.itemModule)
     const dispatch = useDispatch()
-
     const onAddToCart = (item) => {
         dispatch(addToCart(item))
     }
-
+    console.log(item);
     return (
         <section className="card-container">
             <div className="card-img">
