@@ -1,19 +1,21 @@
-import { Link } from "react-router-dom";
-import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { BsFillCartFill } from 'react-icons/bs';
 import { AiFillHome } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 export function Header() {
+
+    const navigate = useNavigate()
 
     return <header className="header flex">
 
         <div className="header-wrapper flex">
             <div className="header-wrapper-left flex ">
-                <Link to="/"><div className="btn btn-header"> <AiFillHome /></div></Link>
-                <Link to="/shop"><div className="btn btn-header">About Us</div></Link>
-                <div className="btn btn-header">Contact Us</div>
+                <div ><div className="btn btn-header" onClick={() => navigate('/')}> <AiFillHome /></div></div>
+                <div ><div className="btn btn-header" onClick={() => navigate('/about')}>About Us</div></div>
+                <div className="btn btn-header" onClick={() => navigate('/contact')}>Contact Us</div>
             </div>
             <div className="header-wrapper-right flex">
-                <div className="btn btn-header"><AiOutlineShoppingCart /></div>
+                <div className="btn btn-header" onClick={() => navigate('/cart')}><BsFillCartFill /></div>
             </div>
         </div>
     </header>

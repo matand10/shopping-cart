@@ -6,12 +6,12 @@ import { routes } from './routes';
 
 export const App = () => {
   return (
-    <Router>
+    <section className="App">
       <Header />
       <Routes>
         {routes.map(route => <Route key={route.path} exact element={<route.component />} path={route.path} />)}
       </Routes>
-    </Router>
+    </section>
   );
 }
 
