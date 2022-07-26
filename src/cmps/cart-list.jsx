@@ -4,7 +4,7 @@ export const CartList = ({ cart, removeItem }) => {
 
     return (
         <section className="cart-list-container">
-            {cart.items.map(item => <CartPreview key={item._id} item={item} removeItem={removeItem} />)}
+            {cart.items.map((item, idx) => <CartPreview key={idx} item={item} removeItem={removeItem} />)}
         </section>
     )
 }
