@@ -12,7 +12,6 @@ export const Cart = () => {
         dispatch(removeFromCart(item))
     }
 
-    console.log(cart);
     return (
         <section className="cart-container main-layout">
             <CartSidebar cart={cart} />

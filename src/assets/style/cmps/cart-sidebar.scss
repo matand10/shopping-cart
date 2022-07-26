@@ -1,7 +1,13 @@
 .cart-sidebar {
     display: flex;
-    flex-direction: inherit;
-    position: fixed;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin: 10px;
+    max-height: 500px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 .cart-wrapper {

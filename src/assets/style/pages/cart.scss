@@ -1,4 +1,9 @@
 .cart-container {
     background-color: #eeeeee;
-    min-height: calc(100vh - 2.5rem)
+    min-height: calc(100vh - 2.5rem);
+    display: flex;
+}
+
+.cart-list-container {
+    flex: 2;
 }
