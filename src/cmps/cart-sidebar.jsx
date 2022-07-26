@@ -18,8 +18,9 @@ export const CartSidebar = ({ cart }) => {
                 <div className='cart-fotter'>
                     <div className='cart-total-price'>
                         <div className='total-items'>Total items: {cart.items.length}</div>
-                        <div className='total-price'>{cart.price}</div>
+                        <div className='total-price'>{cart.price}$</div>
                     </div>
+                    <div className='btn-pay'>Proceed to payment</div>
                 </div>
             </div>
         </section>
