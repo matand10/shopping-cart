@@ -3,7 +3,6 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 export const CartSidebar = ({ cart }) => {
 
-    console.log(cart);
     return (
         <section className="cart-sidebar">
             <div className="cart-wrapper">
@@ -13,12 +12,12 @@ export const CartSidebar = ({ cart }) => {
                 </div>
                 <div className='cart-main-content'>
                     <ul className='cart-items'>
-                        <div className='cart-amount'>Total Item(s):{cart.length}</div>
+                        <div className='cart-amount'>Total Item(s):{cart.items.length}</div>
                     </ul>
                 </div>
                 <div className='cart-fotter'>
                     <div className='cart-total-price'>
-                        <div className='total-items'>Total items: {cart.length}</div>
+                        <div className='total-items'>Total items: {cart.items.length}</div>
                         <div className='total-price'>{cart.price}</div>
                     </div>
                 </div>

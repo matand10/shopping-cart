@@ -7,13 +7,8 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 export function Header() {
-    const [totalPrice, setTotalPrice] = useState(0)
     const { cart } = useSelector((storeState) => storeState.itemModule)
     const navigate = useNavigate()
-
-    useEffect(() => {
-        cart.products.forEach(item => setTotalPrice(totalPrice + item.price))
-    }, [cart])
 
     return <header className="header flex">
         <div className="header-wrapper flex">
@@ -23,7 +18,7 @@ export function Header() {
                 <div className="btn btn-header" onClick={() => navigate('/contact')}>Contact Us</div>
             </div>
             <div className="header-wrapper-right flex">
-                <div className="btn btn-header" onClick={() => navigate('/cart')}><BsFillCartFill /> {cart.length} Item(s) - ${totalPrice}</div>
+                <div className="btn btn-header" onClick={() => navigate('/cart')}><BsFillCartFill /> {cart.items.length} Item(s) - ${cart.price}</div>
             </div>
         </div>
     </header>

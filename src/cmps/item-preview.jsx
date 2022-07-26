@@ -7,7 +7,7 @@ export const ItemPreview = ({ item }) => {
     const onAddToCart = (item) => {
         dispatch(addToCart(item))
     }
-    console.log(item);
+
     return (
         <section className="card-container">
             <div className="card-img">
