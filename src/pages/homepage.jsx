@@ -35,7 +35,6 @@ export const Homepage = () => {
     if (!items) return <div>Loading...</div>
     const currItems = [...items]
 
-    console.log(cart);
     return <section className="homepage main-layout">
         <ItemList items={currItems.splice(currentPage, 4)} />
         <div className="flex">

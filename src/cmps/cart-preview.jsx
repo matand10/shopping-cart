@@ -2,16 +2,16 @@ import { useState } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
 
-export const CartPreview = ({ item }) => {
+export const CartPreview = ({ item, removeItem }) => {
     let [itemAmount, setItemAmount] = useState(1)
     let [itemPrice, setItemPrice] = useState(item.price)
 
-    const addToCart = () => {
+    const increaseAmount = () => {
         setItemAmount(++itemAmount)
         setItemPrice(itemPrice + item.price)
     }
 
-    const removeFromCart = () => {
+    const decreaseAmount = () => {
         if (itemAmount === 1) return
         setItemAmount(--itemAmount)
         setItemPrice(itemPrice - item.price)
@@ -22,6 +22,7 @@ export const CartPreview = ({ item }) => {
             <div className="cart-card-container">
                 <div className="cart-card-img">
                     <img src={item.image} alt="item" />
+                    <button onClick={() => removeItem(item)}>Remove</button>
                 </div>
                 <div className="cart-desc-container">
                     <h1>{item.title}</h1>
@@ -29,9 +30,9 @@ export const CartPreview = ({ item }) => {
                 </div>
                 <div className="cart-price-container">
                     <div className="add-item-control">
-                        <button onClick={removeFromCart}><AiOutlineMinus /></button>
+                        <button onClick={decreaseAmount}><AiOutlineMinus /></button>
                         <p>{itemAmount}</p>
-                        <button onClick={addToCart}><AiOutlinePlus /></button>
+                        <button onClick={increaseAmount}><AiOutlinePlus /></button>
                     </div>
                     <div className='card-total-price'>
                         <span> {item.price.toFixed(2)}$</span>

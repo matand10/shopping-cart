@@ -24,6 +24,39 @@
     grid-area: img;
     width: 150px;
     padding: 20px;
+    position: relative;
+
+    & button {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background-color: #7ec6ca;
+        width: 100%;
+        color: $color1;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        button {
+            display: flex;
+            animation: removeBtn .2s linear;
+        }
+    }
+}
+
+@keyframes removeBtn {
+    from {
+
+        opacity: 0;
+    }
+
+    to {
+        opacity: 10;
+    }
 }
 
 .cart-desc-container {

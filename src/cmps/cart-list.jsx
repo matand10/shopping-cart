@@ -1,10 +1,10 @@
 import { CartPreview } from './cart-preview'
 
-export const CartList = ({ cart }) => {
+export const CartList = ({ cart, removeItem }) => {
 
     return (
         <section className="cart-container">
-            {cart.items.map(item => <CartPreview key={item._id} item={item} />)}
+            {cart.items.map(item => <CartPreview key={item._id} item={item} removeItem={removeItem} />)}
         </section>
     )
 }

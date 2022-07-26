@@ -22,6 +22,13 @@ export function itemReducer(state = initialState, action) {
         case 'ADD_CART':
             cart = { ...state.cart, items: [action.item, ...state.cart.items], price: (state.cart.price + action.item.price) }
             return { ...state, cart }
+        case 'REMOVE_CART':
+            cart = {
+                ...state.cart, items: state.cart.items.filter(item => {
+                    return item._id !== action.item._id
+                }), price: (state.cart.price - action.item.price)
+            }
+            return { ...state, cart }
         case 'UPDATE_ITEM':
             items = state.items.map(currItem =>
                 (currItem._id === action.item._id) ? action.item : currItem)
