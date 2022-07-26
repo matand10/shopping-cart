@@ -14,7 +14,7 @@ export const CartPreview = ({ item }) => {
                     <p>{item.description}</p>
                 </div>
                 <div className="cart-price-container">
-                    <span><AiOutlineMinus /> 1 <AiOutlinePlus /></span>
+                    <span className="add-item-control"><AiOutlineMinus /> 1 <AiOutlinePlus /></span>
                     <div className='card-total-price'>
                         <span> {item.price}</span>
                         <span className='total-price'>30$</span>
