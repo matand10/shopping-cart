@@ -1,7 +1,7 @@
 const initialState = {
     items: [],
     cart: {
-        products: [],
+        items: [],
         price: 0
     }
 }
@@ -20,8 +20,7 @@ export function itemReducer(state = initialState, action) {
             items = [action.item, ...state.items]
             return { ...state, items }
         case 'ADD_CART':
-            cart = { products: [...state.cart.products, action.item], ...state.cart }
-            console.log(cart);
+            cart = { ...state.cart, items: [action.item, ...state.cart.items], price: (state.cart.price + action.item.price) }
             return { ...state, cart }
         case 'UPDATE_ITEM':
             items = state.items.map(currItem =>

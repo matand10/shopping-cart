@@ -1,11 +1,12 @@
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
+import { useSelector } from "react-redux"
 import { ItemList } from "../cmps/item-list"
 import { itemService } from '../services/item.service'
 import { useEffectUpdate } from '../hook/useEffectUpdate'
 
 export const Homepage = () => {
     const [items, setItems] = useState(null)
+    const { cart } = useSelector((state) => state.itemModule)
     let [currentPage, setCurrentPage] = useState(0)
 
     useEffect(() => {
@@ -34,6 +35,7 @@ export const Homepage = () => {
     if (!items) return <div>Loading...</div>
     const currItems = [...items]
 
+    console.log(cart);
     return <section className="homepage main-layout">
         <ItemList items={currItems.splice(currentPage, 4)} />
         <div className="flex">

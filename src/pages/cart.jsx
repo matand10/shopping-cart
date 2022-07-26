@@ -10,7 +10,7 @@ export const Cart = () => {
 
     return (
         <section className="cart-container main-layout">
-            <CartSidebar />
+            <CartSidebar cart={cart} />
             <CartList cart={cart} />
         </section>
     )
