@@ -12,7 +12,7 @@ export function Header() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        cart.forEach(item => setTotalPrice(totalPrice + item.price))
+        cart.products.forEach(item => setTotalPrice(totalPrice + item.price))
     }, [cart])
 
     return <header className="header flex">

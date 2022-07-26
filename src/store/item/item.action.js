@@ -35,6 +35,7 @@ export function saveItem(item) {
 }
 
 export function addToCart(item) {
+    console.log(item);
     return async dispatch => {
         try {
             dispatch({ type: 'ADD_CART', item: item })
